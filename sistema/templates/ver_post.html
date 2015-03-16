@@ -1,0 +1,72 @@
+{% extends "home.html" %}
+
+{% block jumbotron %}{% endblock %}
+
+{% block principal %}
+
+<script>
+post_id = "{{post.id}}"
+</script>
+
+<div class="row">
+
+            <!-- Blog Post Content Column -->
+            <div id='pagina' class="col-lg-8 col-lg-offset-2">
+
+                <!-- Blog Post -->
+                <!-- Title -->
+                <h1>{{post.titulo}}</h1>
+                <!-- Author -->
+                <p class="lead">
+                    by <a href="#">{{post.autor.first_name}} {{post.autor.last_name}}</a>
+                </p>
+                <hr>
+                <!-- Preview Image -->
+                <img class="img-responsive" src="http://placehold.it/900x300" alt="">
+                <hr>
+                <!-- Post Content -->
+                <p class="lead">{{lista_paragrafos.0}}</p>
+                {% for paragrafo in lista_paragrafos.1 %}
+                <p>{{paragrafo}}</p>
+                {% endfor %}
+                <hr>
+                <!-- Blog Comments -->
+
+                <!-- Comments Form -->
+                <div class="well">
+                    <h4>Leave a Comment:</h4>
+                    <form role="form" id="form_comentario" method="POST"> {% csrf_token %}
+                        <div class="form-group">
+                            <textarea class="form-control" id='texto_comentario' rows="3"></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary">Enviar comentário</button>
+                    </form>
+                </div>
+
+                <hr>
+
+                <!-- Posted Comments -->
+
+                <!-- Comment -->
+                {% for comentario in lista_comentarios %}
+                    <div class="media">
+                        <a class="pull-left" href="#">
+                            <img class="media-object" src="http://placehold.it/64x64" alt="">
+                        </a>
+                        <div class="media-body">
+                            <h4 class="media-heading">{{comentario.0.autor.first_name}} {{ comentario.0.autor.last_name }}
+                                {% if comentario.1 %}<a href="/apagar_comentario/{{comentario.0.id}}"><small>Apagar comentário</small></a> {% endif %}
+                            </h4>
+                            {{comentario.0.texto}}
+                        </div>
+                    </div>
+
+
+                {% endfor %}
+
+            </div>
+
+        </div>
+
+
+{% endblock %}

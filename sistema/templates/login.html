@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Signin Template for Bootstrap</title>
+
+    <script src="https://code.jquery.com/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
+    <link href="/static/css/login.css" rel="stylesheet">
+
+
+    {# Arquivos necessario para a validacao de forms #}
+    <link rel="stylesheet" href="/static/formvalidation/css/formValidation.min.css">
+    <script rel="stylesheet" src="/static/formvalidation/js/formValidation.min.js"></script>
+    <script rel="stylesheet" src="/static/formvalidation/js/framework/bootstrap.min.js"></script>
+
+    <!-- Just for debugging purposes. Don't actually copy these 2 lines! -->
+    <!--[if lt IE 9]><script src="../../assets/js/ie8-responsive-file-warning.js"></script><![endif]-->
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    <script>
+    $(document).ready(function() {
+        $("#loginform").formValidation({
+            framework: 'bootstrap',
+            icon: {
+                valid: 'glyphicon glyphicon-ok',
+                invalid: 'glyphicon glyphicon-remove',
+                validating: 'glyphicon glyphicon-refresh'
+            },
+            fields: {
+                email: {
+                    validators: {
+                        notEmpty: {
+                            message: "Esse campo é obrigatório"
+                        },
+                        emailAddress: {
+                            message: "Digite um email válido"
+                        },
+                        stringLength: {
+                            min: 1,
+                            max: 30,
+                            message: 'O email deve ter no máximo 30 caracteres'
+                        },
+                        regexp: {
+                            regexp: /^[a-zA-z0-9_@\-\+\.]+$/,
+                            message: 'O email contem caracteres inválidos'
+                        }
+                    }
+                },
+                password: {
+                    validators: {
+                        notEmpty: {
+                            message: "Esse campo é obrigatório"
+                        }
+                    }
+                }
+            }
+        })
+    })
+
+
+    </script>
+
+
+  </head>
+
+  <body>
+
+    <div class="container">
+
+      <form class="form-signin" id='loginform' method="POST"> {% csrf_token %}
+        <h2 class="form-signin-heading">Please log in</h2>
+        <div class="form-group">
+            <label for="inputEmail" class="sr-only">Email address</label>
+            <input type="email" id="inputEmail" class="form-control" name="email" placeholder="Email address" required autofocus>
+        </div>
+
+        <div class="form-group">
+            <label for="inputPassword" class="sr-only">Password</label>
+            <input type="password" id="inputPassword" class="form-control" name="password" name=password placeholder="Password" required>
+        </div>
+        <div class="form-group">
+            <div class="checkbox">
+              <label>
+                <input type="checkbox" value="remember-me"> Remember me
+              </label>
+            </div>
+        </div>
+        <button class="btn btn-lg btn-primary btn-block" type="submit">Log in</button>
+      </form>
+        <div class="form-signin">
+            <a href="/cadastrar/"><button class="btn btn-lg btn-success btn-block" type="submit">Sign up</button></a>
+        </div>
+
+
+    </div> <!-- /container -->
+  </body>
+</html>
+
