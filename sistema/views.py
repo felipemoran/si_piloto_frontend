@@ -56,6 +56,9 @@ def home(request):
         lista_final.append([post_cortado,status])
     return render(request, 'home.html', locals())
 
+def home_bootstrap(request):
+    user = request.user
+    return render(request, 'home_bootstrap.html', locals())
 
 @login_required
 def curtir_post(request):

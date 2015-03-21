@@ -18,6 +18,7 @@ urlpatterns = patterns('',
 
     url(r'^cadastrar/$', views.cadastrar, name='cadastrar'),
 
+    url(r'^home_bootstrap/$', views.home_bootstrap, name='home_bootstrap'),
 
     url(r'^admin/', include(admin.site.urls)),
 )
