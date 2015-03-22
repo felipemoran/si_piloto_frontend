@@ -4,3 +4,6 @@ si_piloto/wsgi.pyc
 sistema/__init__.pyc
 sistema/admin.pyc
 sistema/models.pyc
+si_piloto/urls.pyc
+sistema/forms.pyc
+sistema/views.pyc
