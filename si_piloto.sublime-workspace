@@ -4,6 +4,10 @@
 		"selected_items":
 		[
 			[
+				"home",
+				"home_bootstrap"
+			],
+			[
 				"id",
 				"id_chat"
 			],
@@ -207,14 +211,22 @@
 	"expanded_folders":
 	[
 		"/home/ubuntu/Documents/projetos_ntec/si_piloto_frontend",
-		"/home/ubuntu/Documents/projetos_ntec/si_piloto_frontend/si_piloto"
+		"/home/ubuntu/Documents/projetos_ntec/si_piloto_frontend/si_piloto",
+		"/home/ubuntu/Documents/projetos_ntec/si_piloto_frontend/sistema",
+		"/home/ubuntu/Documents/projetos_ntec/si_piloto_frontend/sistema/templates",
+		"/home/ubuntu/Documents/projetos_ntec/si_piloto_frontend/static"
 	],
 	"file_history":
 	[
+		"/home/ubuntu/Documents/helloworld.c",
+		"/home/ubuntu/Documents/lab-programacao/hash_table/Tarefa 8/Makefile",
+		"/home/ubuntu/Documents/projetos_ntec/si_piloto_frontend/sistema/templates/home_bootstrap.html",
+		"/home/ubuntu/Documents/projetos_ntec/si_piloto_frontend/sistema/templates/ver_post.html",
 		"/home/ubuntu/Documents/projetos_ntec/si_piloto_frontend/si_piloto/urls.py",
-		"/home/ubuntu/Documents/projetos_ntec/si_piloto_frontend/sistema/views.py",
 		"/home/ubuntu/Documents/projetos_ntec/si_piloto_frontend/sistema/models.py",
+		"/home/ubuntu/Documents/projetos_ntec/si_piloto_frontend/sistema/views.py",
 		"/home/ubuntu/Documents/projetos_ntec/si_piloto_frontend/sistema/templates/home.html",
+		"/home/ubuntu/Documents/projetos_ntec/si_piloto_frontend/sistema/templates/login.html",
 		"/home/ubuntu/Documents/projetos_ntec/si_piloto_frontend/si_piloto/settings.py",
 		"/Volumes/HDD/felipemoran/Desktop/Texts/SI PS Junior - Anotacao primeira reuiniao.txt",
 		"/Volumes/HDD/felipemoran/Desktop/Texts/Todo - AT SI PS Júnior.txt",
@@ -545,7 +557,7 @@
 	"show_open_files": false,
 	"show_tabs": true,
 	"side_bar_visible": true,
-	"side_bar_width": 156.0,
+	"side_bar_width": 95.0,
 	"status_bar_visible": true,
 	"template_settings":
 	{
